@@ -1,8 +1,8 @@
 {
-  "latestVersion": "0.16.1",
-  "latestBuildNumber": 41,
-  "releaseDate": "2026-04-27",
-  "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQB7SlaXjdhARakDZrQDFO8yAQFwbP35NFSDlHJBrhONDMI?e=sxC7dX",
-  "releaseNotes": "Hotfix for v0.16.0: typing into form fields was being intercepted by the scanner listener — fixed. Plus the v0.16.0 features: Print 2D labels for unscannable bottles (Edit Bottle dialog → Print label), and an in-app Update available banner that points you at the latest build.",
+  "latestVersion": "0.17.0",
+  "latestBuildNumber": 42,
+  "releaseDate": "2026-04-28",
+  "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
+  "releaseNotes": "Bulk-stock quantity column. Cards / OTCs without per-unit barcodes can now be entered as one row with a count (e.g. 15 cards of ibuprofen, lot ABC123, exp 2027-08-31, qty 15) instead of 15 near-duplicate rows. The dashboard shows a × N badge on bulk rows; tap the new −1 button to record one used. PAR computations now sum quantities, so bulk stock counts correctly toward thresholds.",
   "minSupportedVersion": "0.10.0"
 }
