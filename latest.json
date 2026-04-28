@@ -1,8 +1,8 @@
 {
-  "latestVersion": "0.17.0",
-  "latestBuildNumber": 42,
+  "latestVersion": "0.18.0",
+  "latestBuildNumber": 43,
   "releaseDate": "2026-04-28",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
-  "releaseNotes": "Bulk-stock quantity column. Cards / OTCs without per-unit barcodes can now be entered as one row with a count (e.g. 15 cards of ibuprofen, lot ABC123, exp 2027-08-31, qty 15) instead of 15 near-duplicate rows. The dashboard shows a × N badge on bulk rows; tap the new −1 button to record one used. PAR computations now sum quantities, so bulk stock counts correctly toward thresholds.",
+  "releaseNotes": "Manual entry no longer requires a GTIN — cards / OTCs without 2D barcodes can now be saved by drug name + dose alone. Dose / strength is a new first-class field shown on the dashboard alongside the drug name (Ibuprofen 200mg instead of bare Ibuprofen). Edit any row to fill in or correct dose. Pharmacy CSV imports also pick up the new dose column.",
   "minSupportedVersion": "0.10.0"
 }
