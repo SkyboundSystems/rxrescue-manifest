@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.20.0",
-  "latestBuildNumber": 45,
+  "latestVersion": "0.20.5",
+  "latestBuildNumber": 46,
   "releaseDate": "2026-05-04",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlWindows": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlAndroid": "https://1drv.ms/u/c/3a76152622123cdc/IQBGGbAqaPvCS7OwE7rNTFDKAcY8gvMPlR_nzUDHakSH8NA?e=cWO6lh",
-  "releaseNotes": "Several improvements: Activity Today tile shows scans, manual entries, decrements and pulls separately. Pull-mode now bulk-decrements bulk-stock instead of always pulling the whole row. FDA dose lookup auto-fills dose more reliably. New phone install with CSV export workflow (multi-device sync is being rebuilt and will return in a later update). Internal reliability fixes: paused sync no longer re-flushes on resume, replay diagnostics filter out local op IDs, manual entries are counted separately from scans on the Today tile.",
+  "releaseNotes": "Quality-of-life improvements: tap any bottle to assign Narcotic/Refrigerated/Bottle/Blister/Cream — the category is remembered for that drug and auto-applied on the next scan. The Edit Bottle dialog now also lets you move stock between zones without re-scanning. Linear (1D) barcodes that don't decode as standard formats are now captured as raw rows instead of being rejected — fill in the drug name on the dashboard. New \"Check for updates\" item in the dashboard overflow menu (the three-dot button) for when a fresh release lands and you don't want to wait for the next-day auto-check.",
   "minSupportedVersion": "0.10.0"
 }
