@@ -1,0 +1,46 @@
+name: Supabase keepalive (RxRescue)
+
+# Hits the RxRescue Supabase project's REST API every 6 hours to prevent
+# Free-tier auto-pause (kicks in after 7 days with no DB queries). Lives in
+# this PUBLIC repo because public-repo Actions get unlimited minutes —
+# avoids burning the private rxrescue repo's 2000-min/month budget on a
+# trivial keepalive curl.
+#
+# Required GitHub secrets (Repo → Settings → Secrets and variables → Actions):
+#   SUPABASE_URL        — e.g. https://vomeodetmwylawmudsfj.supabase.co
+#   SUPABASE_ANON_KEY   — legacy anon JWT or sb_publishable_* key
+#
+# How to verify after setting secrets:
+#   GitHub → Actions tab → "Supabase keepalive (RxRescue)" → Run workflow.
+#   Successful run shows "Status: 200 | Time: <x>s | Keepalive ping successful."
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # 00:00 / 06:00 / 12:00 / 18:00 UTC every day
+  workflow_dispatch:        # manual trigger from the Actions tab for testing
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Hit Supabase REST API
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
+            echo "::error::SUPABASE_URL and SUPABASE_ANON_KEY secrets must be set"
+            exit 1
+          fi
+          # GET /rest/v1/pharmacies returns [] for anon callers (RLS denies
+          # row visibility without a session-scoped device_id). The query
+          # itself is real DB activity and resets the auto-pause clock.
+          curl -fsS \
+            "${SUPABASE_URL}/rest/v1/pharmacies?limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+            -o /dev/null \
+            -w "Status: %{http_code} | Time: %{time_total}s\n"
+          echo "Keepalive ping successful."
