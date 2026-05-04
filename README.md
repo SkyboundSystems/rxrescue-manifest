@@ -13,7 +13,10 @@ version (by semver-then-build-number) is available.
 | `latestVersion`      | string  | yes      | Pure semver, e.g. `"0.17.0"` (no `-rc1` suffixes — `compareVersions` falls back to lexical for non-numeric segments) |
 | `latestBuildNumber`  | int     | yes      | Used as a tiebreak when versions are equal   |
 | `releaseDate`        | string  | yes      | ISO `YYYY-MM-DD`                             |
-| `downloadUrl`        | string  | yes      | Public URL the user's browser opens when they tap Download. OneDrive Personal share URL (`https://1drv.ms/u/c/...`) for `RxRescue-windows-latest.zip` — serves an HTML preview page that has a Download button on it. |
+| `downloadUrl`        | string  | yes      | Generic download URL — Windows zip historically. Acts as fallback when the platform-specific URLs below are missing. |
+| `downloadUrlWindows` | string  | no (v0.20+) | Direct download URL for `RxRescue-windows-latest.zip`. When present, Windows clients use this instead of `downloadUrl`. |
+| `downloadUrlAndroid` | string  | no (v0.20+) | Direct download URL for `RxRescue-android-latest.apk`. When present, Android clients use this instead of `downloadUrl`. Added v0.20 to fix the bug where Android tapping Download in v0.19 received the Windows zip. |
+| `downloadUrlIos`     | string  | no       | Reserved for the future iOS port. Likely App Store / TestFlight, may stay unused. |
 | `releaseNotes`       | string  | yes      | Free-text plain. Banner truncates to 2 lines on the dashboard. |
 | `minSupportedVersion`| string  | no       | Reserved; not yet enforced by the app.       |
 

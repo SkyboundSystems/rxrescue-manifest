@@ -1,8 +1,10 @@
 {
-  "latestVersion": "0.19.0",
-  "latestBuildNumber": 44,
-  "releaseDate": "2026-04-29",
+  "latestVersion": "0.20.0",
+  "latestBuildNumber": 45,
+  "releaseDate": "2026-05-04",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
-  "releaseNotes": "Multi-device sync. Two devices (your Windows + your phone, or two computers in the same pharmacy) can now share an inventory by syncing through OneDrive or another cloud folder. Open Settings → Sync, tap 'Set up sync (first device)', pick a folder, share the 6-character setup code with the other device(s) so they can join. Decrements add additively across devices, edits last-write-wins by Lamport clock, and the activity feed records every cross-device replay so you can audit what came from where.",
+  "downloadUrlWindows": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
+  "downloadUrlAndroid": "https://1drv.ms/u/c/3a76152622123cdc/IQBGGbAqaPvCS7OwE7rNTFDKAcY8gvMPlR_nzUDHakSH8NA?e=cWO6lh",
+  "releaseNotes": "Several improvements: Activity Today tile shows scans, manual entries, decrements and pulls separately. Pull-mode now bulk-decrements bulk-stock instead of always pulling the whole row. FDA dose lookup auto-fills dose more reliably. New phone install with CSV export workflow (multi-device sync is being rebuilt and will return in a later update). Internal reliability fixes: paused sync no longer re-flushes on resume, replay diagnostics filter out local op IDs, manual entries are counted separately from scans on the Today tile.",
   "minSupportedVersion": "0.10.0"
 }
