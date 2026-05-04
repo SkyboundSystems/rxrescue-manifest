@@ -1,22 +1,29 @@
 name: Supabase keepalive (RxRescue)
 
-# Hits the RxRescue Supabase project's REST API every 6 hours to prevent
-# Free-tier auto-pause (kicks in after 7 days with no DB queries). Lives in
-# this PUBLIC repo because public-repo Actions get unlimited minutes —
-# avoids burning the private rxrescue repo's 2000-min/month budget on a
-# trivial keepalive curl.
+# Hits the RxRescue Supabase project's /healthz Edge Function once a day
+# to prevent Free-tier auto-pause (kicks in after 7 days with no activity).
+# Lives in this PUBLIC repo because public-repo Actions get unlimited
+# minutes — avoids burning the private rxrescue repo's 2000-min/month
+# budget on a trivial keepalive curl.
 #
-# Required GitHub secrets (Repo → Settings → Secrets and variables → Actions):
-#   SUPABASE_URL        — e.g. https://vomeodetmwylawmudsfj.supabase.co
-#   SUPABASE_ANON_KEY   — legacy anon JWT or sb_publishable_* key
+# Redundancy: a SECOND keepalive is scheduled INSIDE the database via
+# pg_cron (job: rxrescue_internal_heartbeat, daily 12:00 UTC). Either
+# job alone keeps the project alive; both together = the project doesn't
+# pause if either side fails. We deliberately schedule this job at 00:00
+# UTC so the two heartbeats are ~12 hours apart.
 #
-# How to verify after setting secrets:
+# /healthz is a public Edge Function (verify_jwt=false). No auth header
+# needed. Hitting the function runtime resets the function-side pause
+# clock; the function's pure-CPU response (no DB query) is fine because
+# the pg_cron heartbeat covers the database side.
+#
+# How to verify:
 #   GitHub → Actions tab → "Supabase keepalive (RxRescue)" → Run workflow.
 #   Successful run shows "Status: 200 | Time: <x>s | Keepalive ping successful."
 
 on:
   schedule:
-    - cron: '0 */6 * * *'   # 00:00 / 06:00 / 12:00 / 18:00 UTC every day
+    - cron: '0 0 * * *'     # daily at 00:00 UTC (~6 PM Mountain in DST)
   workflow_dispatch:        # manual trigger from the Actions tab for testing
 
 jobs:
@@ -24,23 +31,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - name: Hit Supabase REST API
+      - name: Hit Supabase /healthz Edge Function
         env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          HEALTHZ_URL: https://vomeodetmwylawmudsfj.supabase.co/functions/v1/healthz
         run: |
           set -euo pipefail
-          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
-            echo "::error::SUPABASE_URL and SUPABASE_ANON_KEY secrets must be set"
-            exit 1
-          fi
-          # GET /rest/v1/pharmacies returns [] for anon callers (RLS denies
-          # row visibility without a session-scoped device_id). The query
-          # itself is real DB activity and resets the auto-pause clock.
-          curl -fsS \
-            "${SUPABASE_URL}/rest/v1/pharmacies?limit=1" \
-            -H "apikey: ${SUPABASE_ANON_KEY}" \
-            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
-            -o /dev/null \
-            -w "Status: %{http_code} | Time: %{time_total}s\n"
+          RESPONSE=$(curl -fsS \
+            "$HEALTHZ_URL" \
+            -w "\nStatus: %{http_code} | Time: %{time_total}s\n")
+          echo "$RESPONSE"
           echo "Keepalive ping successful."
