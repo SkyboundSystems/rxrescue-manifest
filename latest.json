@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.21.2",
-  "latestBuildNumber": 49,
+  "latestVersion": "0.22.0",
+  "latestBuildNumber": 50,
   "releaseDate": "2026-05-05",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlWindows": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlAndroid": "https://1drv.ms/u/c/3a76152622123cdc/IQBGGbAqaPvCS7OwE7rNTFDKAcY8gvMPlR_nzUDHakSH8NA?e=cWO6lh",
-  "releaseNotes": "v0.21.2 — polish + reliability pass:\n\n• The \"Add bottle\" button no longer covers the last row's controls — pharmacy techs scrolling fast can hit \"Mark Pulled\" or \"−1\" without misclicking.\n\n• Daily expiration sweep on launch is now near-instant even after a long offline period (was visibly slow when 1000+ bottles needed flipping).\n\n• Windows title bar, taskbar entry, and File Explorer Properties now correctly identify the app as \"RxRescue\" by Skybound Systems.\n\n• Migration tool from v0.20 cloud-folder logs: files larger than 50 MB are now skipped with a clear notice instead of crashing the import.\n\nUnder the hood: removed a redundant license-status checker that was racing the canonical license check.",
+  "releaseNotes": "v0.22 — performance + UX polish:\n\n• Dashboard is faster on pharmacies with 200+ bottles. The list no longer re-sorts and re-filters on every notifier tick (was the main source of jank during sync polls).\n\n• Background drug-name lookups from the FDA database now run in parallel (5 at a time) instead of serially. A startup sweep on a pharmacy with 50 unknown bottles is ~5x faster.\n\n• Edit-bottle dialog now picks up FDA results that come in WHILE the dialog is open, so opening Edit on a freshly-scanned unknown bottle no longer leaves you with empty Name/Dose fields.\n\n• Touch targets on \"Mark Pulled\" and \"−1\" are now bigger and have more space between them — fewer mis-taps when scanning fast.\n\n• Bottle-row chips now show warnings (Below PAR, Note) on the LEFT so the eye lands on actionable signals first.\n\n• Sync heartbeats no longer pull the full device roster every 30 seconds — only when Settings → Active devices or Diagnostics is open.\n\nUnder the hood: dropped a dead database table from the v0.20 cloud-folder days, removed orphaned Drive sync code, standardized how the daily expiration sweep records audit entries across devices.",
   "minSupportedVersion": "0.10.0"
 }
