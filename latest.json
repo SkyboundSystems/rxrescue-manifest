@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.21.1",
-  "latestBuildNumber": 48,
+  "latestVersion": "0.21.2",
+  "latestBuildNumber": 49,
   "releaseDate": "2026-05-05",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlWindows": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlAndroid": "https://1drv.ms/u/c/3a76152622123cdc/IQBGGbAqaPvCS7OwE7rNTFDKAcY8gvMPlR_nzUDHakSH8NA?e=cWO6lh",
-  "releaseNotes": "v0.21.1 — fixes the trailing \"/1\" that was showing up after tablet doses (e.g. Losartan 25 mg/1 → Losartan 25 mg). The FDA's drug database returns tablet strengths as ratios (\"per 1 tablet\"); RxRescue now strips that tail on lookup. Liquid concentrations like \"100 mg/5 mL\" and injectables like \"10 mg/1 mL\" stay intact. Existing entries with the bad value get cleaned up automatically on first launch — no manual editing.\n\nAll v0.21 features carry forward: backend-based sync via 6-character setup codes, \"Import from old sync folder\" button in Settings, narcotic/refrigerated toggle on bottles, zone move from the edit-bottle dialog, raw-capture for unparseable barcodes, \"Check for updates\" item in the dashboard's three-dot menu.",
+  "releaseNotes": "v0.21.2 — polish + reliability pass:\n\n• The \"Add bottle\" button no longer covers the last row's controls — pharmacy techs scrolling fast can hit \"Mark Pulled\" or \"−1\" without misclicking.\n\n• Daily expiration sweep on launch is now near-instant even after a long offline period (was visibly slow when 1000+ bottles needed flipping).\n\n• Windows title bar, taskbar entry, and File Explorer Properties now correctly identify the app as \"RxRescue\" by Skybound Systems.\n\n• Migration tool from v0.20 cloud-folder logs: files larger than 50 MB are now skipped with a clear notice instead of crashing the import.\n\nUnder the hood: removed a redundant license-status checker that was racing the canonical license check.",
   "minSupportedVersion": "0.10.0"
 }
