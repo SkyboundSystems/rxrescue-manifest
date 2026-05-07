@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.23.0",
-  "latestBuildNumber": 53,
+  "latestVersion": "0.23.1",
+  "latestBuildNumber": 54,
   "releaseDate": "2026-05-06",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlWindows": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlAndroid": "https://1drv.ms/u/c/3a76152622123cdc/IQBGGbAqaPvCS7OwE7rNTFDKAcY8gvMPlR_nzUDHakSH8NA?e=cWO6lh",
-  "releaseNotes": "v0.23.0 - camera barcode scanning (opt-in):\n\n- New Settings toggle: 'Enable camera scanning' under Camera scanner. Off by default. When enabled, a Scan with camera button appears on the dashboard alongside Add bottle. Useful on phones and tablets without a paired Bluetooth scanner.\n\n- The Bluetooth HID scanner remains the primary capture path and is unaffected by this setting.\n\n- The camera screen always shows a No-PHI reminder over the viewfinder. Camera frames are decoded in memory and never saved to disk.\n\n- Decoded barcodes route through the same GS1 parser the HID scanner uses, so DataMatrix, GS1-128, UPC-A, EAN-13, and other supported symbologies all work as before.\n\nIncluded from v0.22.2 (sell-readiness licensing + support polish):\n\n- Server-created trials now expire after 30 days instead of staying open-ended.\n\n- License checks include the server-side status timestamp, so past-due grace cannot reset every check.\n\n- Read-only mode now blocks scans, manual entry, bottle edits, quantity changes, pulls, zone/catalog edits, and FDA catalog writes.\n\n- Settings includes Share support bundle with app, license, sync, backup, and failed-scan diagnostics (no patient information).",
+  "releaseNotes": "v0.23.1 - multi-device sync fix:\n\n- Fixes a bug where peer device additions never appeared on a second device's dashboard. Previously a manual entry or scan made on one device would land in the second device's database and audit log, but the dashboard never refreshed its in-memory list, so the bottle stayed invisible until the user manually pulled to refresh or restarted the app. Now the dashboard reloads automatically after each successful sync pull.\n\nIncludes everything from v0.23.0 (camera barcode scanning, opt-in) and v0.22.2 (sell-readiness licensing + support polish).",
   "minSupportedVersion": "0.10.0"
 }
