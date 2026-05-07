@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.23.2",
-  "latestBuildNumber": 55,
+  "latestVersion": "0.23.3",
+  "latestBuildNumber": 56,
   "releaseDate": "2026-05-06",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlWindows": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlAndroid": "https://1drv.ms/u/c/3a76152622123cdc/IQBGGbAqaPvCS7OwE7rNTFDKAcY8gvMPlR_nzUDHakSH8NA?e=cWO6lh",
-  "releaseNotes": "v0.23.2 - phone AppBar layout fix:\n\n- Fixes a bug where the three-dot overflow menu and other right-side icons were clipped off the right edge of the screen on phones held in portrait. Activity and Reports now fold into the overflow menu on narrow screens; Settings, sync indicator, and pull mode stay on the AppBar. On tablets and Windows the layout is unchanged.\n\nIncludes everything from v0.23.1 (multi-device sync refresh fix), v0.23.0 (camera barcode scanning, opt-in), and v0.22.2 (sell-readiness licensing + support polish).",
+  "releaseNotes": "v0.23.3 - phone AppBar follow-up + print feedback:\n\n- Hides the RxRescue title text on phones in portrait (the leading logo already conveys the app); reclaims ~80dp of horizontal space so the action row stops crowding the logo.\n\n- Compacts the zone selector into an icon button on phones in portrait. The active zone name is still visible in the dashboard filter chips and the picker bottom sheet that the icon opens. On tablets and Windows the labeled pill is unchanged.\n\n- Print label now reports back: 'Label sent to the print spooler' on success or 'Print not sent' (with a hint to try Share PDF) when the OS print dialog returned without a job. Previously a silent driver-side failure or a cancel were indistinguishable, which made BT620 troubleshooting impossible.\n\nIncludes everything from v0.23.2 (AppBar overflow fix), v0.23.1 (multi-device sync refresh fix), v0.23.0 (camera barcode scanning, opt-in), and v0.22.2 (sell-readiness licensing + support polish).",
   "minSupportedVersion": "0.10.0"
 }
