@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.23.4",
-  "latestBuildNumber": 57,
+  "latestVersion": "0.23.5",
+  "latestBuildNumber": 58,
   "releaseDate": "2026-05-06",
   "downloadUrl": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlWindows": "https://1drv.ms/u/c/3a76152622123cdc/IQCTqYL8oDhSQIN1QSqSRtb-Aammf4ViT9Z8AoNaKujiC0Q?e=rPeyxW",
   "downloadUrlAndroid": "https://1drv.ms/u/c/3a76152622123cdc/IQBGGbAqaPvCS7OwE7rNTFDKAcY8gvMPlR_nzUDHakSH8NA?e=cWO6lh",
-  "releaseNotes": "v0.23.4 - Windows Start menu installer:\n\n- The Windows ZIP now includes 'Install RxRescue.cmd' next to rx_rescue.exe. Double-click it once after extracting and RxRescue appears in your Start menu and shows up in Start menu search. Pass /Desktop to also create a desktop shortcut. The script is safe to re-run if you ever move the install folder.\n\nIncludes everything from v0.23.3 (phone AppBar follow-up + print feedback), v0.23.2 (AppBar overflow fix), v0.23.1 (multi-device sync refresh fix), v0.23.0 (camera barcode scanning, opt-in), and v0.22.2 (sell-readiness licensing + support polish).",
+  "releaseNotes": "v0.23.5 - critical Windows print crash fix:\n\n- Fixes a crash where pressing Print Label on Windows would terminate RxRescue immediately, before any print job reached the spooler. Root cause: the Flutter printing plugin's print dialog enumerates every installed printer's capabilities, and some third-party thermal-printer drivers (e.g. LabelRange BT620) return malformed data the plugin doesn't bounds-check. The dereference crashes inside the C runtime.\n\n- Workaround: on Windows, the Print button now writes the PDF to a temp file and opens it in your default PDF viewer (Edge, Adobe, etc.). Use that viewer's Print option (Ctrl+P) to send to a printer. This bypasses the crashing code path entirely and lets you print to any printer including Microsoft Print to PDF. Also disables the PDF preview's built-in print button on Windows so users can't trigger the crash from there either.\n\n- Android, the Print button is unchanged (the Android system print sheet doesn't share the crashing code path).\n\nIncludes everything from v0.23.4 (Start menu installer), v0.23.3 (phone AppBar follow-up + print feedback), v0.23.2 (AppBar overflow fix), v0.23.1 (multi-device sync refresh fix), v0.23.0 (camera barcode scanning), and v0.22.2 (sell-readiness licensing + support polish).",
   "minSupportedVersion": "0.10.0"
 }
