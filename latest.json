@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.4",
-  "latestBuildNumber": 63,
-  "releaseDate": "2026-05-09",
+  "latestVersion": "0.24.5",
+  "latestBuildNumber": 64,
+  "releaseDate": "2026-05-10",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.4 — Settings menu compression follow-up.\n\nCamera scanner toggle and other sections (Thresholds, Audit, Zones, Return Manifest) previously had multi-line explanatory paragraphs that pushed real controls below the fold. Moved the explanations behind tap-to-reveal info icons in the section headers. Estimated 200-250px of vertical space saved on a phone screen. Same controls, same behavior, just more compact.\n\nIncludes everything from v0.24.0 through v0.24.3: Windows .exe installer, save-to-file support bundle, delete-in-error button, multi-device docs, Android Auto Backup off, in-app DB reset for recovery from open_failed errors.",
+  "releaseNotes": "v0.24.5 — DSCSA audit pack + Quarantine status.\n\nOne-tap 'Export DSCSA audit pack' on the Reports screen bundles six CSVs into a single share: active FEFO inventory, full audit log, DSCSA T3 transaction data, FDA recall match history, return manifest, and the suspect/quarantine log. Same generation timestamp on all six.\n\nNew Quarantine status on the Edit Bottle dialog — distinct from Mark Pulled (legitimate return) and Delete (scanned in error). For physically-segregated stock pending investigation.\n\nPersistent FDA recall match history: every match the recall checker has found is now recorded with first/last-seen timestamps, exportable in the audit pack.\n\nSchema bumped to v13. Existing customers' devices migrate on first launch; local data is preserved.",
   "minSupportedVersion": "0.10.0"
 }
