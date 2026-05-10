@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.1",
-  "latestBuildNumber": 60,
+  "latestVersion": "0.24.4",
+  "latestBuildNumber": 63,
   "releaseDate": "2026-05-09",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.1 — Hotfix for Android fresh-install spinner.\n\nFresh installs of v0.24.0 on Android could hang on the splash CircularProgressIndicator forever. Bootstrap was awaiting flutter_secure_storage and Google Sign-In SDK calls that don't always resolve under Android Keystore / Play Services edge conditions. Each suspect bootstrap step is now timeout-wrapped so the app degrades gracefully (Drive sync skipped, etc.) instead of spinning forever.\n\nAll v0.24.0 features are unchanged: Windows .exe installer, Settings menu compression, Save-to-file support bundle, Delete-in-error button, multi-device docs page at https://rxrescue.us/multi-device.",
+  "releaseNotes": "v0.24.4 — Settings menu compression follow-up.\n\nCamera scanner toggle and other sections (Thresholds, Audit, Zones, Return Manifest) previously had multi-line explanatory paragraphs that pushed real controls below the fold. Moved the explanations behind tap-to-reveal info icons in the section headers. Estimated 200-250px of vertical space saved on a phone screen. Same controls, same behavior, just more compact.\n\nIncludes everything from v0.24.0 through v0.24.3: Windows .exe installer, save-to-file support bundle, delete-in-error button, multi-device docs, Android Auto Backup off, in-app DB reset for recovery from open_failed errors.",
   "minSupportedVersion": "0.10.0"
 }
