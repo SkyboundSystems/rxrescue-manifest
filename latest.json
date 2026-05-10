@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.0",
-  "latestBuildNumber": 59,
+  "latestVersion": "0.24.1",
+  "latestBuildNumber": 60,
   "releaseDate": "2026-05-09",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.0 — Windows .exe installer, Settings compression, Save-to-file support bundle, Delete-in-error, multi-device docs:\n\n- New Windows installer (.exe) replaces the extract-the-ZIP flow. Per-user install, no admin elevation, optional desktop shortcut, standard uninstaller. Run the installer, click through, done. The legacy ZIP is still available at rxrescue.us/download/windows-zip for environments where .exe installers are blocked.\n\n- Settings menu compression: scanner section uses horizontal chip-style selectors instead of vertical radio lists; Backup, Drive, Demo, Diagnostics, About moved into nested sub-screens. The top-of-Settings list now fits roughly one viewport on a phone.\n\n- Save-to-file support bundle (Windows): Diagnostics → Save support bundle to file writes a timestamped .txt to your Documents folder and opens the folder in Explorer. Bypasses the Outlook-default Share intent — attach the file to whatever email client you actually use.\n\n- Delete (scanned in error): new red button in the Edit Bottle dialog. Removes a typo'd or duplicate row WITHOUT counting as a stock pull on the Returns Manifest. The audit log records the honest reason. Distinct from Mark Pulled (which is for legitimate stock returning to the wholesaler).\n\n- New public docs page at https://rxrescue.us/multi-device covering one-pharmacy-many-devices, adding a tablet, rotating a setup code, lost-device response, planned replacement, sync conflicts, and FAQ.\n\nDownload links above redirect through rxrescue.us to the GitHub release at github.com/SkyboundSystems/rxrescue-manifest/releases/tag/v0.24.0 — direct binary download, no OneDrive intercept.",
+  "releaseNotes": "v0.24.1 — Hotfix for Android fresh-install spinner.\n\nFresh installs of v0.24.0 on Android could hang on the splash CircularProgressIndicator forever. Bootstrap was awaiting flutter_secure_storage and Google Sign-In SDK calls that don't always resolve under Android Keystore / Play Services edge conditions. Each suspect bootstrap step is now timeout-wrapped so the app degrades gracefully (Drive sync skipped, etc.) instead of spinning forever.\n\nAll v0.24.0 features are unchanged: Windows .exe installer, Settings menu compression, Save-to-file support bundle, Delete-in-error button, multi-device docs page at https://rxrescue.us/multi-device.",
   "minSupportedVersion": "0.10.0"
 }
