@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.13",
-  "latestBuildNumber": 72,
+  "latestVersion": "0.24.14",
+  "latestBuildNumber": 73,
   "releaseDate": "2026-05-11",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.13 — Three sync fixes prompted by Alex's report. (1) Durable outbound queue: every scan / pull / edit is persisted to disk at the moment it's recorded and the sync runner drains the queue on every sync attempt; if the network or sync state is broken when an op happens, the row stays put for retry instead of vanishing. (2) Manual Sync now surfaces real errors with a red banner instead of always showing a green Sync complete. (3) Setup screen: button labels and order updated so Join existing pharmacy is the primary action, and Create new pharmacy now requires explicit confirmation to prevent the duplicate-pharmacy bug.",
+  "releaseNotes": "v0.24.14 — Three fixes from Alex's testing of v0.24.13. (1) Desktop Save-to-phone bug: on Windows, the file picker showed but the file never actually wrote. Fixed — saving now works on every platform. (2) Cycle count workflow: scanning a NEW bottle (one not already in this zone) now adds it in-place and auto-tags it with the current zone, plus an inline Scan-with-Camera button at the bottom on mobile. One-pass reconcile: add new + purge gone in the same workflow. (3) Print Label screen header text is now derived from the actual default label size (was hardcoded to '2x2 inch' after v0.24.10 dropped the default to 1\"×1\").",
   "minSupportedVersion": "0.10.0"
 }
