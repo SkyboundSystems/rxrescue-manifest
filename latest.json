@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.9",
-  "latestBuildNumber": 68,
+  "latestVersion": "0.24.10",
+  "latestBuildNumber": 69,
   "releaseDate": "2026-05-11",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.9 — Android update-download hotfix. Fixes 'Could not open download link' error in the in-app Update banner on Android 11+. Caused by missing <queries> entry in AndroidManifest.xml for VIEW+https intents — Android's package-visibility rules require explicit declaration. After installing v0.24.9 once (via the website rather than the in-app banner), future updates work normally.\n\nNo new features in this release; v0.24.8's Split container + label print are unchanged.",
+  "releaseNotes": "v0.24.10 — Default print label size is now 1x1 inch (was 2x2). Per Alex's feedback. Layout scales proportionally with floor-protected font sizes, so the same code renders cleanly on both 1\" and 2\" stock. Includes the v0.24.9 Android update-link hotfix.",
   "minSupportedVersion": "0.10.0"
 }
