@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.10",
-  "latestBuildNumber": 69,
+  "latestVersion": "0.24.11",
+  "latestBuildNumber": 70,
   "releaseDate": "2026-05-11",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.10 — Default print label size is now 1x1 inch (was 2x2). Per Alex's feedback. Layout scales proportionally with floor-protected font sizes, so the same code renders cleanly on both 1\" and 2\" stock. Includes the v0.24.9 Android update-link hotfix.",
+  "releaseNotes": "v0.24.11 — Cycle-count workflow (zone-by-zone scan against FEFO; anything not scanned is depleted in-place, doesn't ship for credit). Plus two new pre-audit reports: soon-to-expire pull list (120-day horizon, sorted by expiration) and dead-stock candidates report (per-GTIN expiry rate vs PAR review). Available from the dashboard overflow menu and Reports screen.",
   "minSupportedVersion": "0.10.0"
 }
