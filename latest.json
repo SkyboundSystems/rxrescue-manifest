@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.12",
-  "latestBuildNumber": 71,
+  "latestVersion": "0.24.13",
+  "latestBuildNumber": 72,
   "releaseDate": "2026-05-11",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.12 — Every export action now offers a clear Save-to-phone option in addition to Share. Save uses the Android Save File dialog so files land in Downloads (or anywhere you pick) and can be opened from your file manager. The DSCSA audit pack and full backup are now zipped into a single .zip so save/share is one attachment instead of six. Fixes Alex's report that the audit-pack share sheet had no obvious download path.",
+  "releaseNotes": "v0.24.13 — Three sync fixes prompted by Alex's report. (1) Durable outbound queue: every scan / pull / edit is persisted to disk at the moment it's recorded and the sync runner drains the queue on every sync attempt; if the network or sync state is broken when an op happens, the row stays put for retry instead of vanishing. (2) Manual Sync now surfaces real errors with a red banner instead of always showing a green Sync complete. (3) Setup screen: button labels and order updated so Join existing pharmacy is the primary action, and Create new pharmacy now requires explicit confirmation to prevent the duplicate-pharmacy bug.",
   "minSupportedVersion": "0.10.0"
 }
