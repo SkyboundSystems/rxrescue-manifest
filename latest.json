@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.8",
-  "latestBuildNumber": 67,
-  "releaseDate": "2026-05-10",
+  "latestVersion": "0.24.9",
+  "latestBuildNumber": 68,
+  "releaseDate": "2026-05-11",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.8 — Print labels for all N split children. After splitting a bulk parent into N children, the success SnackBar shows a 'Print labels' action that produces a multi-page PDF (one label per child) and routes through the same print dispatch as the single-label flow.",
+  "releaseNotes": "v0.24.9 — Android update-download hotfix. Fixes 'Could not open download link' error in the in-app Update banner on Android 11+. Caused by missing <queries> entry in AndroidManifest.xml for VIEW+https intents — Android's package-visibility rules require explicit declaration. After installing v0.24.9 once (via the website rather than the in-app banner), future updates work normally.\n\nNo new features in this release; v0.24.8's Split container + label print are unchanged.",
   "minSupportedVersion": "0.10.0"
 }
