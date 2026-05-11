@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.14",
-  "latestBuildNumber": 73,
+  "latestVersion": "0.24.15",
+  "latestBuildNumber": 74,
   "releaseDate": "2026-05-11",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.14 — Three fixes from Alex's testing of v0.24.13. (1) Desktop Save-to-phone bug: on Windows, the file picker showed but the file never actually wrote. Fixed — saving now works on every platform. (2) Cycle count workflow: scanning a NEW bottle (one not already in this zone) now adds it in-place and auto-tags it with the current zone, plus an inline Scan-with-Camera button at the bottom on mobile. One-pass reconcile: add new + purge gone in the same workflow. (3) Print Label screen header text is now derived from the actual default label size (was hardcoded to '2x2 inch' after v0.24.10 dropped the default to 1\"×1\").",
+  "releaseNotes": "v0.24.15 — Three improvements prompted by Alex's continued sync testing. (1) Activity log now shows an 'imported' badge on rows that arrived from a peer device, so you can tell at a glance which scans came from where. (2) Create-new-pharmacy now requires type-to-confirm ('CREATE NEW') when local inventory exists — designed to prevent accidental duplicate pharmacies on the server when you actually meant to Join. (3) Sync Diagnostics screen has a new 'Sync health' panel showing pending push count, last successful sync time, and last error — answers 'is sync actually working right now?' at a glance.",
   "minSupportedVersion": "0.10.0"
 }
