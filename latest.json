@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.6",
-  "latestBuildNumber": 65,
+  "latestVersion": "0.24.7",
+  "latestBuildNumber": 66,
   "releaseDate": "2026-05-10",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.6 — Daily FDA recall auto-check.\n\nThe app now fetches openFDA on launch (debounced to once per 24 hours) and persists matches to recall_match_history so the DSCSA audit pack's recall_history CSV stays current automatically. A red banner appears at the top of the dashboard when matches are found, with a tap-to-review action. The Recalls screen shows a 'Last checked' line so freshness is visible at a glance.\n\nIncludes everything from v0.24.5: one-tap DSCSA audit pack export, Quarantine status with full sync support, persistent FDA recall match history.",
+  "releaseNotes": "v0.24.7 — Split container + external inventory CSV import.\n\nSplit container: bulk-repackaging workflow. New button in Edit Bottle dialog (visible when quantity > 1). Splits a 1000-tab Tylenol pack into 10 bottles of 100 in one dialog. Parent marks Pulled with audit note, N children inherit lot/expiry/zone.\n\nExternal inventory CSV import: for pharmacies on existing systems (Liberty, Rx30, ComputerRx). Auto-detects common column names. Re-importing is safe. PHI guard rejects patient-shaped columns.",
   "minSupportedVersion": "0.10.0"
 }
