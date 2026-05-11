@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.11",
-  "latestBuildNumber": 70,
+  "latestVersion": "0.24.12",
+  "latestBuildNumber": 71,
   "releaseDate": "2026-05-11",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.11 — Cycle-count workflow (zone-by-zone scan against FEFO; anything not scanned is depleted in-place, doesn't ship for credit). Plus two new pre-audit reports: soon-to-expire pull list (120-day horizon, sorted by expiration) and dead-stock candidates report (per-GTIN expiry rate vs PAR review). Available from the dashboard overflow menu and Reports screen.",
+  "releaseNotes": "v0.24.12 — Every export action now offers a clear Save-to-phone option in addition to Share. Save uses the Android Save File dialog so files land in Downloads (or anywhere you pick) and can be opened from your file manager. The DSCSA audit pack and full backup are now zipped into a single .zip so save/share is one attachment instead of six. Fixes Alex's report that the audit-pack share sheet had no obvious download path.",
   "minSupportedVersion": "0.10.0"
 }
