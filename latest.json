@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.25.2",
-  "latestBuildNumber": 84,
+  "latestVersion": "0.25.3",
+  "latestBuildNumber": 85,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.25.2 — batched cleanup of small audit findings. Six low-risk fixes: conflict audit notes show LAST 8 device_id chars (SRE convention); _refreshRecallBannerSignature surfaces errors via debugPrint instead of silent catch-all; disconnect() clears lastSyncAt unconditionally so the old pharmacy's timestamp doesn't linger after a failed revoke; new test covers UpdateChecker.dispose() during in-flight requests; AppSettings.primeForTesting exposes the new banner-state fields; recalledVersions can now target a specific build (e.g. '0.24.22+81' matches only that build, '0.24.22' matches every build). 410 tests passing.",
+  "releaseNotes": "v0.25.3 — Liberty CSV adapter. Resolves the Cross-Thread Ask from CSU pharmacy onboarding: Liberty Software's 'Lot/Exp' report uses an alternating Lot/Data row pattern (NOT flat CSV) with multi-lot quirks and fractional quantities. v0.25.3 detects the format, reshapes to flat, preserves multi-lot rows verbatim for DSCSA traceability, rounds fractional qty to nearest int (no more silent fallback to 1). Month-name date parsing extended ('May 12, 2026') for Liberty's header + other legacy reports. RxRescue pitch to Liberty-using pharmacies is now no-third-scan + audit-ready off their existing report. 414 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
