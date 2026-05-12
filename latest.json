@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.17",
-  "latestBuildNumber": 76,
+  "latestVersion": "0.24.18",
+  "latestBuildNumber": 77,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.17 — Five durability + safety fixes from a hardening audit. (1) Cross-pharmacy data leak fixed: outbound sync queue is now scoped to the enrolled pharmacy and cleared on disconnect so a re-pairing to a different pharmacy can't drag old data into the new one. (2) Scan atomicity: a scan now writes its inventory row, audit entry, and sync queue entry inside a single transaction so a crash or power-loss mid-scan can't leave orphan rows. (3) WAL journal mode + NORMAL sync for faster commits and better concurrent reader behavior. (4) Mandatory-update gate when the installed version is older than the manifest's minSupportedVersion (red, non-dismissible banner). (5) Trial signup now emails the setup code via Resend so the customer has it even if the success redirect drops the URL param. Plus: GitHub Action auto-deploys all 10 Edge Functions on push to main."
+  "releaseNotes": "v0.24.18 — Four more audit findings fixed. (1) Trial signup flow flipped: pharmacies now created server-side AFTER Stripe Checkout completes (not before), so abandoned signups can't leave orphan pharmacy rows. Setup code arrives by email when the customer pays. (2) Concurrent-edit divergence fixed: edits that happen on two devices at the same Lamport tick now resolve deterministically via device-id tiebreak instead of diverging across devices. (3) Sync now filters ops authored by Disconnected devices, so stale data from previously-revoked devices stops replaying. (4) Trial-expiring-soon banner: when the trial has 7 days or less left, the dashboard shows an amber warning before the trial actually flips to read-only mode."
   "minSupportedVersion": "0.10.0"
 }
