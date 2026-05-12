@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.20",
-  "latestBuildNumber": 79,
+  "latestVersion": "0.24.21",
+  "latestBuildNumber": 80,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.20 — hardening pass round 3. Eight audit findings landed: decrement+pull race produces matching audit-log narrative across devices (DSCSA-relevant); Lamport clock clamps to max(observed)+1 on every inbound pull; outbound-queue write failures now surface on the Sync Health tile instead of being silently dropped; CSV audit-log export streams to disk in batches so it can't OOM on a long retention window; the in-app update check honestly reports 'manifest unreachable' instead of lying 'you're on the latest'; latest.json gained a recalledVersions list so we can pull customers back from a bad build; audit log retention bumped from 2 years to 7 years to match DSCSA pedigree requirements. Server-side: /start-trial now per-IP rate-limited (5/hour by default) before paid ads go live. Deferred to a future release: scan + cycle-count-deplete race (need clearer repro), dashboard re-render perf at 5K+ bottles (1-2 day refactor).",
+  "releaseNotes": "v0.24.21 — fixes the v0.24.20 loophole exposed by the v0.24.19 manifest's missing-comma JSON bug: a failed/unreachable manifest fetch no longer suppresses the next 24h retry. v0.24.20 (all the audit findings from the May 12 round-3 pass) is still the canonical changelog; v0.24.21 is a small follow-up so a single bad manifest never locks the app out of auto-updating for a day. 392 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
