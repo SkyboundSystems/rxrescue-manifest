@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.16",
-  "latestBuildNumber": 75,
+  "latestVersion": "0.24.17",
+  "latestBuildNumber": 76,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.16 — Five improvements from Alex's testing. (1) Sync stall fix: scans that landed during an in-flight sync no longer wait for the next 30-second poll to push — they re-trigger the drain immediately. (2) Sync Diagnostics device roster now shows only ACTIVE devices (revoked-but-not-yet-cleaned-up entries are filtered out — fixed both server-side and in display). (3) Sync support bundle export now offers Save-to-phone in addition to Share. (4) Camera scanner has a brief framing delay (1 second) and a yellow 'Framing...' indicator on entry so you have time to point at the right barcode. (5) Cycle count: when you scan a NEW bottle missing the drug name, dose, or expiration date, the edit dialog now pops automatically so you can fill those in before moving on.",
+  "releaseNotes": "v0.24.17 — Five durability + safety fixes from a hardening audit. (1) Cross-pharmacy data leak fixed: outbound sync queue is now scoped to the enrolled pharmacy and cleared on disconnect so a re-pairing to a different pharmacy can't drag old data into the new one. (2) Scan atomicity: a scan now writes its inventory row, audit entry, and sync queue entry inside a single transaction so a crash or power-loss mid-scan can't leave orphan rows. (3) WAL journal mode + NORMAL sync for faster commits and better concurrent reader behavior. (4) Mandatory-update gate when the installed version is older than the manifest's minSupportedVersion (red, non-dismissible banner). (5) Trial signup now emails the setup code via Resend so the customer has it even if the success redirect drops the URL param. Plus: GitHub Action auto-deploys all 10 Edge Functions on push to main."
   "minSupportedVersion": "0.10.0"
 }
