@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.22",
-  "latestBuildNumber": 81,
+  "latestVersion": "0.25.0",
+  "latestBuildNumber": 82,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.22 — CRITICAL Android DB-open fix. v0.24.21 (and every release back to v0.24.17, latently) failed on Android at first launch with 'PRAGMA journal_mode = WAL' rejecting db.execute() because the pragma returns a row. Fix: call db.rawQuery() for that pragma (and wal_autocheckpoint). Escaped the Windows-only dev environment because sqflite_common_ffi tolerates the wrong API; Android sqflite_sqlcipher does not. Customer impact (Alex): locked out of the app on first launch of v0.24.21. No data loss — his ops were already synced before the update bit him. Also bundled: post-release smoke test (script + GitHub Action) that diffs sync-append KNOWN_OP_TYPES against the DB CHECK constraint, plus a second-opinion code review with 19 findings (17 non-bleeding, queued for v0.25.x).",
+  "releaseNotes": "v0.25.0 — audit cleanup pass. Eight P1/P2 fixes from the Sonnet+Codex independent reviews after the rocky v0.24.13–v0.24.22 string. Highlights: dashboard 'Undo' SnackBar now syncs to peers via a proper RevertOp (silent cross-device divergence was previously happening on every Undo); Sync Diagnostics pendingCount scopes to current pharmacy + surfaces cross-pharmacy stale rows separately; audit-log CSV export uses cursor pagination so concurrent writes can't skip or duplicate rows; source_device_id added to the export; peer audit-log narrative aligned with originator for expire_auto/delete/quarantine/cycle_count_deplete; lastError clears after partial-success drains. 400 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
