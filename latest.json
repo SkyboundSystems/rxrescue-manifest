@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.25.0",
-  "latestBuildNumber": 82,
+  "latestVersion": "0.25.1",
+  "latestBuildNumber": 83,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.25.0 — audit cleanup pass. Eight P1/P2 fixes from the Sonnet+Codex independent reviews after the rocky v0.24.13–v0.24.22 string. Highlights: dashboard 'Undo' SnackBar now syncs to peers via a proper RevertOp (silent cross-device divergence was previously happening on every Undo); Sync Diagnostics pendingCount scopes to current pharmacy + surfaces cross-pharmacy stale rows separately; audit-log CSV export uses cursor pagination so concurrent writes can't skip or duplicate rows; source_device_id added to the export; peer audit-log narrative aligned with originator for expire_auto/delete/quarantine/cycle_count_deplete; lastError clears after partial-success drains. 400 tests passing.",
+  "releaseNotes": "v0.25.1 — structural fixes that prevent classes of bug rather than specific bugs. Android instrumentation testing now runs on every push + PR via a real emulator in GitHub Actions (would have caught the v0.24.22 WAL pragma incident pre-deploy). Three-layer op-type drift gate at commit time: a single-source-of-truth Dart set is asserted equal to KNOWN_OP_TYPES in sync-append AND the DB CHECK constraint via regex scrape (would have caught the v0.24.19 incident before push). Corrupt-op dead-letter table replaces the silent-delete behavior in drainOutbound — failed-to-parse rows are preserved with their JSON + error for support, surfaced as a red count on Sync Diagnostics. dbVersion 17. 407 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
