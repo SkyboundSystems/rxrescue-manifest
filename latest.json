@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.25.1",
-  "latestBuildNumber": 83,
+  "latestVersion": "0.25.2",
+  "latestBuildNumber": 84,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.25.1 — structural fixes that prevent classes of bug rather than specific bugs. Android instrumentation testing now runs on every push + PR via a real emulator in GitHub Actions (would have caught the v0.24.22 WAL pragma incident pre-deploy). Three-layer op-type drift gate at commit time: a single-source-of-truth Dart set is asserted equal to KNOWN_OP_TYPES in sync-append AND the DB CHECK constraint via regex scrape (would have caught the v0.24.19 incident before push). Corrupt-op dead-letter table replaces the silent-delete behavior in drainOutbound — failed-to-parse rows are preserved with their JSON + error for support, surfaced as a red count on Sync Diagnostics. dbVersion 17. 407 tests passing.",
+  "releaseNotes": "v0.25.2 — batched cleanup of small audit findings. Six low-risk fixes: conflict audit notes show LAST 8 device_id chars (SRE convention); _refreshRecallBannerSignature surfaces errors via debugPrint instead of silent catch-all; disconnect() clears lastSyncAt unconditionally so the old pharmacy's timestamp doesn't linger after a failed revoke; new test covers UpdateChecker.dispose() during in-flight requests; AppSettings.primeForTesting exposes the new banner-state fields; recalledVersions can now target a specific build (e.g. '0.24.22+81' matches only that build, '0.24.22' matches every build). 410 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
