@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.24.18",
-  "latestBuildNumber": 77,
+  "latestVersion": "0.24.19",
+  "latestBuildNumber": 78,
   "releaseDate": "2026-05-12",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.24.18 — Four more audit findings fixed. (1) Trial signup flow flipped: pharmacies now created server-side AFTER Stripe Checkout completes (not before), so abandoned signups can't leave orphan pharmacy rows. Setup code arrives by email when the customer pays. (2) Concurrent-edit divergence fixed: edits that happen on two devices at the same Lamport tick now resolve deterministically via device-id tiebreak instead of diverging across devices. (3) Sync now filters ops authored by Disconnected devices, so stale data from previously-revoked devices stops replaying. (4) Trial-expiring-soon banner: when the trial has 7 days or less left, the dashboard shows an amber warning before the trial actually flips to read-only mode."
+  "releaseNotes": "v0.24.19 — Fixes Alex's '342 scans pending upload' bug. Root cause: the sync engine batches up to 50 ops at a time, and if even ONE op in the batch was a type the server didn't recognize (quarantine and cycle-count-depleted ops shipped client-side but were never added to the server's validation list), the whole batch was rejected and the entire queue got stranded behind the bad op. Two-part fix: server now accepts those op types, AND the client falls back to one-op-at-a-time pushing whenever a batch gets rejected, so a single bad op can no longer block the rest. Plus: cycle-count now also prompts for missing fields when re-scanning an existing bottle (not just when adding a new one)."
   "minSupportedVersion": "0.10.0"
 }
