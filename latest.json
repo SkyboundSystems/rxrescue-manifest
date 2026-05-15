@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.25.3",
-  "latestBuildNumber": 85,
-  "releaseDate": "2026-05-12",
+  "latestVersion": "0.25.4",
+  "latestBuildNumber": 86,
+  "releaseDate": "2026-05-15",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.25.3 — Liberty CSV adapter. Resolves the Cross-Thread Ask from CSU pharmacy onboarding: Liberty Software's 'Lot/Exp' report uses an alternating Lot/Data row pattern (NOT flat CSV) with multi-lot quirks and fractional quantities. v0.25.3 detects the format, reshapes to flat, preserves multi-lot rows verbatim for DSCSA traceability, rounds fractional qty to nearest int (no more silent fallback to 1). Month-name date parsing extended ('May 12, 2026') for Liberty's header + other legacy reports. RxRescue pitch to Liberty-using pharmacies is now no-third-scan + audit-ready off their existing report. 414 tests passing.",
+  "releaseNotes": "v0.25.4 — Bulk-move active inventory to the Pulled list. A new one-tap action in Settings (Demo & data) moves every Active medication to the Pulled list, gated by a confirmation dialog that shows the active-item count. Built for the start-a-fresh-count workflow: clears the active dashboard in a single step instead of pulling bottles one at a time. This is a real pull, NOT a delete — every bottle gets a Pulled entry in the Activity log, full history is preserved, and the bottles stay on the Return Manifest. Multi-device-safe (a pull op is emitted per item) and idempotent (already-non-Active rows are skipped). 418 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
