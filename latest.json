@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.25.4",
-  "latestBuildNumber": 86,
+  "latestVersion": "0.25.5",
+  "latestBuildNumber": 87,
   "releaseDate": "2026-05-15",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.25.4 — Bulk-move active inventory to the Pulled list. A new one-tap action in Settings (Demo & data) moves every Active medication to the Pulled list, gated by a confirmation dialog that shows the active-item count. Built for the start-a-fresh-count workflow: clears the active dashboard in a single step instead of pulling bottles one at a time. This is a real pull, NOT a delete — every bottle gets a Pulled entry in the Activity log, full history is preserved, and the bottles stay on the Return Manifest. Multi-device-safe (a pull op is emitted per item) and idempotent (already-non-Active rows are skipped). 418 tests passing.",
+  "releaseNotes": "v0.25.5 — Three changes from field feedback. (1) Label printing no longer fails on bottles scanned from a plain 1D / NDC barcode. RxRescue now prints a plain fallback label — drug name, expiration and lot if known, plus a Code 128 barcode of the scanned code — for any bottle that can't carry a GS1 2D code, and it no longer forces a lot number before printing. (2) The edit-bottle dialog now orders its fields drug name then dose then expiration date. (3) 'Recently scanned' moved to the second sort slot below FEFO, and Settings then Display has a new 'Default sort order' picker so the dashboard opens on your preferred sort. 427 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
