@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.25.5",
-  "latestBuildNumber": 87,
+  "latestVersion": "0.26.0",
+  "latestBuildNumber": 88,
   "releaseDate": "2026-05-15",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.25.5 — Three changes from field feedback. (1) Label printing no longer fails on bottles scanned from a plain 1D / NDC barcode. RxRescue now prints a plain fallback label — drug name, expiration and lot if known, plus a Code 128 barcode of the scanned code — for any bottle that can't carry a GS1 2D code, and it no longer forces a lot number before printing. (2) The edit-bottle dialog now orders its fields drug name then dose then expiration date. (3) 'Recently scanned' moved to the second sort slot below FEFO, and Settings then Display has a new 'Default sort order' picker so the dashboard opens on your preferred sort. 427 tests passing.",
+  "releaseNotes": "v0.26.0 — Three intake-workflow features. (1) NDC package-size enrichment: when RxRescue looks up a drug by its NDC it now also pulls the package size — e.g. '100 tablets' or '30 mL' — and shows it on the dashboard and edit-bottle dialog, carried through CSV import and export. (2) Receive-date capture: every bottle now records the date it was received into stock, separate from the expiration date, captured at intake (scan and manual entry), editable in the edit-bottle dialog, and included in CSV round-trips. (3) Near-expiry-at-intake alert: if a scanned or entered bottle's expiration already falls inside the near-expiry window, RxRescue alerts right away so a short-dated bottle can be quarantined or refused at receiving instead of on a later sweep. Local database schema moves to v18; existing inventory upgrades automatically. 471 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
