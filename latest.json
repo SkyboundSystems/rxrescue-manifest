@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.26.1",
-  "latestBuildNumber": 89,
-  "releaseDate": "2026-05-18",
+  "latestVersion": "0.27.0",
+  "latestBuildNumber": 90,
+  "releaseDate": "2026-05-19",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.26.1 — Bug-fix release for the v0.26.0 intake features. (1) NDC package size now backfills onto products that were already in your catalog before v0.26.0 — previously a product that already had a dose recorded was skipped, so its package size never filled in. (2) Stock brought in through the external CSV importer no longer records today's date as its receive date when the import file carries no date of its own — those rows now correctly leave the receive date blank rather than overstating it on the DSCSA audit export. (3) The near-expiry-at-intake alert can now be turned off — the Settings near-expiry window offers an 'Off' option. (4) The near-expiry alert no longer briefly overlaps the scan-confirmation message. No database change — schema stays at v18; existing inventory is unaffected. 472 tests passing.",
+  "releaseNotes": "v0.27.0 — Zone auditing, a new way to audit the pharmacy shelf by shelf. (1) Zone audit screen: open it from the dashboard menu to see every pharmacy zone as a colour-coded card — red means an audit is due, yellow means one is underway, green means audited today, grey means up to date. Each zone can be renamed, set to a counting type (Unit Count for bottle pharmacies, Package Count for the jail), given a re-audit frequency, and grouped with other zones audited together. (2) Zone audit run: tap a zone to start a scan-driven audit — scan every item physically on the shelf, and when you finish, anything you did not scan is retired from stock automatically, so the inventory and the expiring-medications list reflect exactly what is really there. (3) Expiring Medications Hub: a dedicated screen for short-dated stock, filtered to the next 30 days, the 90-150 day window, or everything within 150 days. Local database schema moves to v19, adding the per-zone audit columns; existing inventory upgrades automatically. 501 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
