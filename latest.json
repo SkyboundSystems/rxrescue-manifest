@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.28.1",
-  "latestBuildNumber": 92,
-  "releaseDate": "2026-05-19",
+  "latestVersion": "0.28.2",
+  "latestBuildNumber": 93,
+  "releaseDate": "2026-05-20",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.28.1 — Polish on v0.28.0 plus a camera-scanner SDK refresh. (1) Grouped zone audits — when you scan a NEW bottle during a multi-zone audit run, the app now asks which member zone the bottle belongs to instead of silently dropping it into the group's primary zone. Single-zone runs are unchanged. (2) Camera scanner — refreshed the underlying ML Kit barcode SDK (mobile_scanner 5→7) and switched to BarcodeFormat.itf14 for ITF-14 codes (the deprecated 'itf' alias is gone). Camera scanning is still opt-in via Settings → Camera scanner. (3) Signup — rxrescue.us/signup now lets you pick monthly ($99/mo), annual ($990/yr), or multi-site plans ($79/site/mo or $790/site/yr) at signup time instead of emailing for annual + multi-site rates. (Already live on the site, no app update needed.) (4) Behind-the-scenes dep refresh — 7 packages bumped to latest within stable constraints. 545 tests passing.",
+  "releaseNotes": "v0.28.2 — Maintenance release; no customer-facing feature changes. (1) Two big-version dependency refreshes that close long-standing pinning rationales — the CSV engine moves from csv 6 to csv 8 (the underlying library was rewritten upstream; Liberty / Rx30 / ComputerRx / Pharmaserv CSV imports + every backup-CSV export still behave identically and the Bumpus Liberty sample CSV round-trips correctly), and the optional Google Drive backup integration moves from google_sign_in 6 to google_sign_in 7 (Drive sign-in / sign-out / silent re-auth / file upload all preserved). Both unblock future security patches on the underlying libraries. (2) Test coverage closed on the per-scan zone picker that shipped in v0.28.1. 549 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
