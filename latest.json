@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.28.2",
-  "latestBuildNumber": 93,
-  "releaseDate": "2026-05-20",
+  "latestVersion": "0.28.3",
+  "latestBuildNumber": 94,
+  "releaseDate": "2026-05-21",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.28.2 — Maintenance release; no customer-facing feature changes. (1) Two big-version dependency refreshes that close long-standing pinning rationales — the CSV engine moves from csv 6 to csv 8 (the underlying library was rewritten upstream; Liberty / Rx30 / ComputerRx / Pharmaserv CSV imports + every backup-CSV export still behave identically and the Bumpus Liberty sample CSV round-trips correctly), and the optional Google Drive backup integration moves from google_sign_in 6 to google_sign_in 7 (Drive sign-in / sign-out / silent re-auth / file upload all preserved). Both unblock future security patches on the underlying libraries. (2) Test coverage closed on the per-scan zone picker that shipped in v0.28.1. 549 tests passing.",
+  "releaseNotes": "v0.28.3 — Behind-the-scenes dep chain unblock; no customer-facing feature changes. The win32 5 → win32 6 transition that had been blocking four packages since the v0.22 audit is now resolved by adopting file_picker 12.0.0-beta.3 (third beta, narrow use in this app — the two folder pickers in Settings and a few CSV save dialogs). Riding the unblock: share_plus 10 → 13 (new SharePlus.instance.share API, deprecation-clean), flutter_secure_storage 9 → 10 (the legacy AndroidOptions encryptedSharedPreferences flag is gone — the new Custom Ciphers backend migrates existing data on first read), and package_info_plus 8 → 10. 549 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
