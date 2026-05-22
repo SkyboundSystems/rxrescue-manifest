@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.28.3",
-  "latestBuildNumber": 94,
-  "releaseDate": "2026-05-21",
+  "latestVersion": "0.28.4",
+  "latestBuildNumber": 95,
+  "releaseDate": "2026-05-22",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.28.3 — Behind-the-scenes dep chain unblock; no customer-facing feature changes. The win32 5 → win32 6 transition that had been blocking four packages since the v0.22 audit is now resolved by adopting file_picker 12.0.0-beta.3 (third beta, narrow use in this app — the two folder pickers in Settings and a few CSV save dialogs). Riding the unblock: share_plus 10 → 13 (new SharePlus.instance.share API, deprecation-clean), flutter_secure_storage 9 → 10 (the legacy AndroidOptions encryptedSharedPreferences flag is gone — the new Custom Ciphers backend migrates existing data on first read), and package_info_plus 8 → 10. 549 tests passing.",
+  "releaseNotes": "v0.28.4 — Security & data-integrity hardening; no customer-facing feature changes. (1) No-PHI protection: free-text notes (the quarantine reason and the split-container note) are now screened for accidental patient references the same way the actor field already was. RxRescue stays stock-only by design — describe the stock or its condition, not a person. Screening runs in the app, on backup restore, and on the sync server. (2) Multi-device sync: hardened the client/server contract gate so an edit field the app can apply but the server doesn't recognize is caught at build time (closes a latent case that could have stalled sync), and a malformed error response from a network proxy no longer causes an operation to retry forever. 567 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
