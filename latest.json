@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.28.4",
-  "latestBuildNumber": 95,
+  "latestVersion": "0.28.5",
+  "latestBuildNumber": 96,
   "releaseDate": "2026-05-22",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.28.4 — Security & data-integrity hardening; no customer-facing feature changes. (1) No-PHI protection: free-text notes (the quarantine reason and the split-container note) are now screened for accidental patient references the same way the actor field already was. RxRescue stays stock-only by design — describe the stock or its condition, not a person. Screening runs in the app, on backup restore, and on the sync server. (2) Multi-device sync: hardened the client/server contract gate so an edit field the app can apply but the server doesn't recognize is caught at build time (closes a latent case that could have stalled sync), and a malformed error response from a network proxy no longer causes an operation to retry forever. 567 tests passing.",
+  "releaseNotes": "v0.28.5 — a big batch of zone-auditing and workflow improvements from field testing. (1) Bug fixes: a single scan no longer creates two entries after saving an audit; opening one zone inside a group now shows only that zone's medications (a new 'Audit all' button runs the whole group together when you want it). (2) Zone auditing: each zone in a group shows its own red/yellow/green status; drag-and-drop to reorder zones and zones within a group; one shared audit frequency per group; and a live 'scanned this run' list inside an audit (newest on top, tap any row to edit). (3) Workflow: Daily Intake rows are now tappable to edit; the old Cycle Count screen has been removed (the zone audit replaced it). (4) Labels: printing no longer forces a temporary lot/serial for NDC scans, and the default label output is now landscape for 1×2-1/8\" DYMO 450 stock. (5) Expiring hub: a custom 'within N days' window plus the option to exclude zones (fridge, narcotics, creams) from the expiring list. Device-to-device sync of the zone lists themselves and the CSU unit-counting workflow are in progress. 573 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
