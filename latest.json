@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.29.1",
-  "latestBuildNumber": 98,
+  "latestVersion": "0.29.2",
+  "latestBuildNumber": 99,
   "releaseDate": "2026-05-26",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.29.1 — closes the known limitation in v0.29.0's release notes (concurrent same-zone edits from both devices). If you renamed a zone on one device at the same instant as you deleted that same zone on the other, the two devices could end up disagreeing about the final state. v0.29.1 introduces a local tombstone record on each device that tracks delete signals so a late-arriving stale upsert can't resurrect a deleted zone. No-op for sequential edits; safety net for concurrent ones. If you're on v0.29.0 today, the auto-updater will roll you to v0.29.1 on next launch. Schema v21→v22 (adds the tombstone table) is automatic on first launch. 592 tests passing.",
+  "releaseNotes": "v0.29.2 — Reports screen reliability fix. Before this release, if an export or import on the Reports screen ran into an unexpected error (disk full, permission denied, etc.), the spinner would just disappear with no feedback — looking exactly like a successful action that produced no file. v0.29.2 wraps every Reports action in proper error handling. Failures now surface as a SnackBar with the operation name + the underlying error, e.g. 'Reorder report export failed: No space left on device'. No behavioral change on the happy path. No schema migration. Auto-updater will roll v0.29.1 → v0.29.2 on next launch. 594 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
