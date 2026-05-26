@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.28.5",
-  "latestBuildNumber": 96,
-  "releaseDate": "2026-05-22",
+  "latestVersion": "0.29.0",
+  "latestBuildNumber": 97,
+  "releaseDate": "2026-05-26",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.28.5 — a big batch of zone-auditing and workflow improvements from field testing. (1) Bug fixes: a single scan no longer creates two entries after saving an audit; opening one zone inside a group now shows only that zone's medications (a new 'Audit all' button runs the whole group together when you want it). (2) Zone auditing: each zone in a group shows its own red/yellow/green status; drag-and-drop to reorder zones and zones within a group; one shared audit frequency per group; and a live 'scanned this run' list inside an audit (newest on top, tap any row to edit). (3) Workflow: Daily Intake rows are now tappable to edit; the old Cycle Count screen has been removed (the zone audit replaced it). (4) Labels: printing no longer forces a temporary lot/serial for NDC scans, and the default label output is now landscape for 1×2-1/8\" DYMO 450 stock. (5) Expiring hub: a custom 'within N days' window plus the option to exclude zones (fridge, narcotics, creams) from the expiring list. Device-to-device sync of the zone lists themselves and the CSU unit-counting workflow are in progress. 573 tests passing.",
+  "releaseNotes": "v0.29.0 — zone-list multi-device sync. Adding, renaming, re-ordering, re-typing, or deleting a zone on one device now syncs to your other devices within a sync cycle (~30 seconds). This was the last piece of RxRescue that wasn't multi-device-aware. Pre-release code audit by three independent reviewers caught and fixed 2 release-blockers and 5 smaller issues before this build. Heads-up on first sync after upgrade: if you already had zones on both devices, each device's defaults (Z1, Z2, Pharmacy, Cabinet, Fridge) had different internal IDs that couldn't sync — you may see defaults doubled up (one 'Z1' and one 'Z1 (xxxxxxxx)') the first time the new sync runs. Pick one device as master, clean-reset zones on the other; secondary will re-sync master's list fresh. Known limitation: simultaneous rename-on-one-device + delete-on-other-device of the same zone can leave the two devices disagreeing; sequential edits are fine. A v0.29.1 follow-up will close that race. 586 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
