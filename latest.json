@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.29.2",
-  "latestBuildNumber": 99,
-  "releaseDate": "2026-05-26",
+  "latestVersion": "0.29.3",
+  "latestBuildNumber": 100,
+  "releaseDate": "2026-05-27",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.29.2 — Reports screen reliability fix. Before this release, if an export or import on the Reports screen ran into an unexpected error (disk full, permission denied, etc.), the spinner would just disappear with no feedback — looking exactly like a successful action that produced no file. v0.29.2 wraps every Reports action in proper error handling. Failures now surface as a SnackBar with the operation name + the underlying error, e.g. 'Reorder report export failed: No space left on device'. No behavioral change on the happy path. No schema migration. Auto-updater will roll v0.29.1 → v0.29.2 on next launch. 594 tests passing.",
+  "releaseNotes": "v0.29.3 — Broader error/resilience hardening. Closes 11 silent-failure surfaces beyond the v0.29.2 report_screen pass: enrollment + disconnect errors now show a SnackBar instead of vanishing; the 'Import from old sync folder' dialog no longer hangs if the migration runner throws; backup export is honest about partial failures; the sync subsystem's post-pull refresh path can no longer strand callers forever if a notifier refresh throws (the biggest fix — caught by the third-reviewer Codex pass); and secure-storage write/clear now time out at 8s instead of hanging on an Android Keystore bad-state. No schema change. No sync op-type change. No new features. Auto-updater rolls v0.29.2 → v0.29.3 on next launch. 597 tests passing.",
   "minSupportedVersion": "0.10.0"
 }
