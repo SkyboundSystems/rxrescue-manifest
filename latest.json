@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.36.0",
-  "latestBuildNumber": 108,
-  "releaseDate": "2026-05-30",
+  "latestVersion": "0.38.0",
+  "latestBuildNumber": 109,
+  "releaseDate": "2026-06-01",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.36.0 — Fixes a confusing Windows situation where running an UNZIPPED copy of RxRescue (instead of the installed one) caused a never-ending 'update available' prompt and made labels look like they reverted to the old 1D barcode. The unzipped copy never auto-updates, so it kept re-offering the same update and still printed the old label format. RxRescue now detects this: Settings -> About shows where the app is running from, and warns you (with a one-time fix) if you're running an unzipped copy instead of the installed one. The fix is to delete the unzipped folder and its shortcuts, then install RxRescue with the installer (RxRescue-windows-x64-setup.exe) and open it from the Start menu. Your data is safe — it lives in your Documents folder and is shared by every copy, so nothing is lost. (This was a packaging/environment issue, not a label bug: v0.35's 2D DataMatrix label code is correct.) Three-reviewer audit; 727 tests passing. Auto-updater rolls v0.35.0 -> v0.36.0 on next launch.",
+  "releaseNotes": "v0.38.0 — Liquid medications now count in milliliters (mL), plus a faster unit-count workflow. RxRescue records the unit of measure for each medication (mL for liquids/suspensions, 'each' for tablets/capsules), filled in automatically from a Liberty stock import and shown on the quantity field ('Quantity (mL)'). A liquid bottle's count is its total mL (four 100 mL bottles = 400), so counts line up with Liberty. In a unit-count zone, scanning the same medication now rolls it into one running total instead of separate rows, and an edit popup appears after every scan with the quantity ready to type. The unit travels with catalog backups + CSV exports. Also folds in an internal design-system foundation (no visible change). The auto-updater rolls v0.36.0 -> v0.38.0 on next launch; the included database update is automatic and your data is unchanged. 772 tests passing; three-reviewer audit, no blocking findings.",
   "minSupportedVersion": "0.10.0"
 }
