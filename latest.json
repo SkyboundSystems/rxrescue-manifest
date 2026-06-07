@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.38.0",
-  "latestBuildNumber": 109,
-  "releaseDate": "2026-06-01",
+  "latestVersion": "0.38.1",
+  "latestBuildNumber": 110,
+  "releaseDate": "2026-06-05",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.38.0 — Liquid medications now count in milliliters (mL), plus a faster unit-count workflow. RxRescue records the unit of measure for each medication (mL for liquids/suspensions, 'each' for tablets/capsules), filled in automatically from a Liberty stock import and shown on the quantity field ('Quantity (mL)'). A liquid bottle's count is its total mL (four 100 mL bottles = 400), so counts line up with Liberty. In a unit-count zone, scanning the same medication now rolls it into one running total instead of separate rows, and an edit popup appears after every scan with the quantity ready to type. The unit travels with catalog backups + CSV exports. Also folds in an internal design-system foundation (no visible change). The auto-updater rolls v0.36.0 -> v0.38.0 on next launch; the included database update is automatic and your data is unchanged. 772 tests passing; three-reviewer audit, no blocking findings.",
+  "releaseNotes": "v0.38.1 — Scanning and reliability fixes. Manufacturer 2D cards that scanned on the main page but failed inside a zone audit now scan everywhere (some cards' barcodes omit the standard field separators, which was being treated as a hard error instead of a harmless warning) — this also applies to Daily Intake and pull/dispense scanning. If an older copy of RxRescue ever opens a database a newer version created, you now get a clear 'you're running an outdated copy — update' screen with your data confirmed safe, instead of a cryptic database error. You can now import a Liberty stock report straight from the Zone Audit screen (per zone or a whole group). Accessibility: screen readers announce expiry-badge urgency, the selected sort, and every button/tooltip; full app-wide localization groundwork. Liberty CSV files saved from Windows with accented drug names no longer fail to import. Under the hood, the Windows installer is hardened so a release can never package an outdated build. The auto-updater rolls 0.38.0 -> 0.38.1 on next launch; your data is unchanged. 787 tests passing; three-reviewer pre-release audit, no blocking findings.",
   "minSupportedVersion": "0.10.0"
 }
