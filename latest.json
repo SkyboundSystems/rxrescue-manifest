@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.38.1",
-  "latestBuildNumber": 110,
-  "releaseDate": "2026-06-05",
+  "latestVersion": "0.38.2",
+  "latestBuildNumber": 111,
+  "releaseDate": "2026-06-08",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.38.1 — Scanning and reliability fixes. Manufacturer 2D cards that scanned on the main page but failed inside a zone audit now scan everywhere (some cards' barcodes omit the standard field separators, which was being treated as a hard error instead of a harmless warning) — this also applies to Daily Intake and pull/dispense scanning. If an older copy of RxRescue ever opens a database a newer version created, you now get a clear 'you're running an outdated copy — update' screen with your data confirmed safe, instead of a cryptic database error. You can now import a Liberty stock report straight from the Zone Audit screen (per zone or a whole group). Accessibility: screen readers announce expiry-badge urgency, the selected sort, and every button/tooltip; full app-wide localization groundwork. Liberty CSV files saved from Windows with accented drug names no longer fail to import. Under the hood, the Windows installer is hardened so a release can never package an outdated build. The auto-updater rolls 0.38.0 -> 0.38.1 on next launch; your data is unchanged. 787 tests passing; three-reviewer pre-release audit, no blocking findings.",
+  "releaseNotes": "v0.38.2 — Scanning fix + interactive reconciliation. The manual edit pop-up no longer appears on a 2D scan that already has everything: it was firing in the split second while the drug name and dose were being looked up, so it now appears only when the name, dose, or expiration is genuinely missing. New — Resolve discrepancies interactively: after importing a Liberty Stock report, the Reports screen offers 'Resolve discrepancies (interactive)', which steps you through only the mismatched NDCs so you can correct each count or acknowledge it with a required note, then export or print a clean resolved report for your records. Daily Intake and Activity now show clearer, friendlier empty states. The auto-updater rolls 0.38.1 -> 0.38.2 on next launch; your data is unchanged. 806 tests passing; three-reviewer pre-release audit, all findings fixed (including a Windows print-path safeguard).",
   "minSupportedVersion": "0.10.0"
 }
