@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.38.2",
-  "latestBuildNumber": 111,
-  "releaseDate": "2026-06-08",
+  "latestVersion": "0.38.3",
+  "latestBuildNumber": 112,
+  "releaseDate": "2026-06-14",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.38.2 — Scanning fix + interactive reconciliation. The manual edit pop-up no longer appears on a 2D scan that already has everything: it was firing in the split second while the drug name and dose were being looked up, so it now appears only when the name, dose, or expiration is genuinely missing. New — Resolve discrepancies interactively: after importing a Liberty Stock report, the Reports screen offers 'Resolve discrepancies (interactive)', which steps you through only the mismatched NDCs so you can correct each count or acknowledge it with a required note, then export or print a clean resolved report for your records. Daily Intake and Activity now show clearer, friendlier empty states. The auto-updater rolls 0.38.1 -> 0.38.2 on next launch; your data is unchanged. 806 tests passing; three-reviewer pre-release audit, all findings fixed (including a Windows print-path safeguard).",
+  "releaseNotes": "v0.38.3 — Encryption at rest, one-tap recall-to-quarantine, and reliability hardening. New: your RxRescue database on Windows is now encrypted at rest (AES-256 / SQLCipher), matching the mobile app — the first launch after updating migrates your existing data automatically, backed up first and revert-safe, so your inventory is never at risk. Recalls now quarantine all matching stock in one tap, and you get a real-time alert if you scan recalled stock during a zone audit. Daily Intake survives an app restart and shows each row's receive date. At a zone audit's finish, the still-missing items are grouped by drug and you can retire or quarantine them on the spot. Edit a bottle's PAR level and demand inline, open a new product-catalog editor from Reports, and new installs get a short first-run welcome. Under the hood: sync-correctness hardening, server-side privacy screening on synced fields, and broader test coverage. The auto-updater rolls 0.38.2 -> 0.38.3 on next launch; your data is unchanged (on Windows it is migrated into encrypted storage, backed up first). 869 tests passing; three-reviewer pre-release audit, all findings fixed.",
   "minSupportedVersion": "0.10.0"
 }
