@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.38.3",
-  "latestBuildNumber": 112,
-  "releaseDate": "2026-06-14",
+  "latestVersion": "0.39.0",
+  "latestBuildNumber": 113,
+  "releaseDate": "2026-06-24",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.38.3 — Encryption at rest, one-tap recall-to-quarantine, and reliability hardening. New: your RxRescue database on Windows is now encrypted at rest (AES-256 / SQLCipher), matching the mobile app — the first launch after updating migrates your existing data automatically, backed up first and revert-safe, so your inventory is never at risk. Recalls now quarantine all matching stock in one tap, and you get a real-time alert if you scan recalled stock during a zone audit. Daily Intake survives an app restart and shows each row's receive date. At a zone audit's finish, the still-missing items are grouped by drug and you can retire or quarantine them on the spot. Edit a bottle's PAR level and demand inline, open a new product-catalog editor from Reports, and new installs get a short first-run welcome. Under the hood: sync-correctness hardening, server-side privacy screening on synced fields, and broader test coverage. The auto-updater rolls 0.38.2 -> 0.38.3 on next launch; your data is unchanged (on Windows it is migrated into encrypted storage, backed up first). 869 tests passing; three-reviewer pre-release audit, all findings fixed.",
+  "releaseNotes": "v0.39 — See the dollar value of your inventory. New: a Value & ROI summary (under Reports) turns your stock into money — the value you can still send back to the wholesaler for credit, the value already lost to expiry, and the at-risk stock you can still return before it expires. Add a unit cost to any product in the catalog editor (or set a fallback average in Settings) and the numbers fill in; items without a cost are shown honestly as \"no cost set,\" never guessed. Export the whole summary to CSV with a per-product breakdown. Under the hood: the new cost field syncs across your devices and is included in your backups. The auto-updater rolls 0.38.3 -> 0.39.0 on next launch; your data is unchanged. 909 tests passing; three-reviewer pre-release audit, all findings fixed.",
   "minSupportedVersion": "0.10.0"
 }
