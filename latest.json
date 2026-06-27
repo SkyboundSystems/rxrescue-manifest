@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.40.0",
-  "latestBuildNumber": 114,
+  "latestVersion": "0.40.1",
+  "latestBuildNumber": 115,
   "releaseDate": "2026-06-27",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.40 — Receive a shipment and reconcile it against your stock. New: a Receiving flow (under Reports) imports a supplier's manifest (CSV/XLSX) or an EPCIS file (XML/JSON), matches each expected line against the bottles you scanned, and flags short, over, not-received, and unexpected items for you to review — accept, quarantine as suspect (per bottle, never mixed back into stock), or mark not received, each with a note. Finalizing freezes a receiving record you can export to CSV; it's also included in your DSCSA audit pack and backups. The EPCIS reader is correct, not a checkbox: it joins commissioning lots to shipped serials, expands case/pallet (SSCC) aggregation, and blocks loudly when a file can't be fully expanded rather than guessing. Honest scope: receiving verification + recordkeeping, NOT a compliance/EPCIS-certification engine. Under the hood: new local tables (schema v25) and a durable per-row receiving record. The auto-updater rolls 0.39.0 -> 0.40.0 on next launch; your data is unchanged. 981 tests passing; three-reviewer pre-release audit (Opus + Sonnet + Codex), all findings fixed.",
+  "releaseNotes": "v0.40.1 — DSCSA receiving hardening (patch), from a three-reviewer adversarial security + data-integrity audit. Security: CSV formula-injection neutralized across every export (a lot/serial/drug-name/note starting with =, +, -, or @ can no longer run as a formula when you open an exported CSV in Excel); drug-name and EPCIS lot values are now screened for patient text; error messages no longer echo raw internal details. Data integrity: an accepted unexpected bottle is attributed to its shipment so a later shipment can't re-match it; finalizing a receive is now atomic and one-shot; the durable receiving record keeps both the expected and the scanned quantity. Plus EPCIS/manifest correctness hardening. Schema v26 (additive). The auto-updater rolls 0.40.0 -> 0.40.1 on next launch; your data is unchanged. 998 tests passing; independently verified.",
   "minSupportedVersion": "0.10.0"
 }
