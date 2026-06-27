@@ -1,10 +1,10 @@
 {
-  "latestVersion": "0.39.0",
-  "latestBuildNumber": 113,
-  "releaseDate": "2026-06-24",
+  "latestVersion": "0.40.0",
+  "latestBuildNumber": 114,
+  "releaseDate": "2026-06-27",
   "downloadUrl": "https://rxrescue.us/download/windows",
   "downloadUrlWindows": "https://rxrescue.us/download/windows",
   "downloadUrlAndroid": "https://rxrescue.us/download/android",
-  "releaseNotes": "v0.39 — See the dollar value of your inventory. New: a Value & ROI summary (under Reports) turns your stock into money — the value you can still send back to the wholesaler for credit, the value already lost to expiry, and the at-risk stock you can still return before it expires. Add a unit cost to any product in the catalog editor (or set a fallback average in Settings) and the numbers fill in; items without a cost are shown honestly as \"no cost set,\" never guessed. Export the whole summary to CSV with a per-product breakdown. Under the hood: the new cost field syncs across your devices and is included in your backups. The auto-updater rolls 0.38.3 -> 0.39.0 on next launch; your data is unchanged. 909 tests passing; three-reviewer pre-release audit, all findings fixed.",
+  "releaseNotes": "v0.40 — Receive a shipment and reconcile it against your stock. New: a Receiving flow (under Reports) imports a supplier's manifest (CSV/XLSX) or an EPCIS file (XML/JSON), matches each expected line against the bottles you scanned, and flags short, over, not-received, and unexpected items for you to review — accept, quarantine as suspect (per bottle, never mixed back into stock), or mark not received, each with a note. Finalizing freezes a receiving record you can export to CSV; it's also included in your DSCSA audit pack and backups. The EPCIS reader is correct, not a checkbox: it joins commissioning lots to shipped serials, expands case/pallet (SSCC) aggregation, and blocks loudly when a file can't be fully expanded rather than guessing. Honest scope: receiving verification + recordkeeping, NOT a compliance/EPCIS-certification engine. Under the hood: new local tables (schema v25) and a durable per-row receiving record. The auto-updater rolls 0.39.0 -> 0.40.0 on next launch; your data is unchanged. 981 tests passing; three-reviewer pre-release audit (Opus + Sonnet + Codex), all findings fixed.",
   "minSupportedVersion": "0.10.0"
 }
